@@ -15,6 +15,8 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* ── STARFIELD ── */
@@ -121,6 +123,7 @@ body {
   opacity: 0;
   animation: riseIn .9s 2s forwards;
   transition: transform .2s, box-shadow .3s;
+  min-height: 48px;
 }
 .btn-gift::before {
   content: '';
@@ -489,8 +492,9 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity .7s;
-  padding: 2rem 1.2rem 3rem;
+  padding: 2rem 1rem 4rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 #letter-overlay.show { opacity: 1; pointer-events: all; }
 
@@ -499,7 +503,7 @@ body {
   width: 100%;
   background: linear-gradient(160deg, #fdf6ee, #fdeef3);
   border-radius: 4px;
-  padding: 2.5rem 2.2rem 2rem;
+  padding: 2rem 1.4rem 1.8rem;
   position: relative;
   box-shadow:
     0 0 0 1px rgba(212,168,83,.3),
@@ -533,7 +537,7 @@ body {
   content: '';
   position: absolute;
   top: 0; bottom: 0;
-  left: 2.2rem;
+  left: 1.4rem;
   width: 1px;
   background: rgba(232,99,122,.2);
   pointer-events: none;
@@ -650,10 +654,11 @@ body {
   align-items: center;
   justify-content: flex-start;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   pointer-events: none;
   transition: opacity .6s;
-  padding: 2.5rem 1.2rem 3rem;
+  padding: 2.5rem 1rem 4rem;
 }
 #box-overlay.show { opacity: 1; pointer-events: all; }
 
@@ -876,6 +881,7 @@ body {
   z-index: 50;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   display: none;
   padding: 3rem 1rem 6rem;
   scroll-behavior: smooth;
@@ -937,7 +943,7 @@ body {
   background: linear-gradient(135deg, rgba(30,10,46,.92), rgba(18,4,32,.96));
   border: 1px solid rgba(232,99,122,.18);
   border-radius: 18px;
-  padding: 2rem 2.2rem;
+  padding: 1.6rem 1.4rem;
   backdrop-filter: blur(12px);
   box-shadow: 0 6px 36px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
   transition: border-color .35s, box-shadow .35s, transform .3s;
