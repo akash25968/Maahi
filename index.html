@@ -1118,7 +1118,7 @@ body {
   <canvas id="confetti-canvas"></canvas>
   <div class="finale-text">
     <div class="finale-name">Maahi ♥</div>
-    <p class="finale-sub">✦ &nbsp; always &nbsp; ✦</p>
+    <p class="finale-sub">✦ &nbsp; always, Akash &nbsp; ✦</p>
     <p class="finale-hint">tap anywhere ♥</p>
   </div>
 </div>
@@ -1133,7 +1133,10 @@ body {
       That’s &nbsp;<span id="counterNum">0</span>&nbsp; days of quietly carrying you with me.
     </div>
     <p class="letter-finale" id="letterFinale">Happiest Birthday, Maahi 🎂</p>
-    <p class="letter-sign" id="letterSign">— always, yours ✦</p>
+    <p class="letter-sign" id="letterSign">— always, Akash ✦</p>
+    <div style="text-align:center;margin-top:1.8rem">
+      <button id="btnContinue" onclick="launchFinale()" style="opacity:0;pointer-events:none;padding:.65rem 2rem;background:linear-gradient(135deg,#e8637a,#d4a853);color:#fff;border:none;border-radius:30px;font-family:'Playfair Display',serif;font-size:.9rem;letter-spacing:1.5px;cursor:pointer;box-shadow:0 4px 20px rgba(232,99,122,.4);transition:opacity .6s,transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">✦ &nbsp; Continue &nbsp; ✦</button>
+    </div>
   </div>
 </div>
 
@@ -1201,7 +1204,7 @@ body {
 
 <script>
 /* ── DAY COUNTER ── */
-const start = new Date('2008-07-01');
+const start = new Date('2008-07-06');
 const days  = Math.floor((new Date() - start) / 86400000);
 document.getElementById('dayCount').textContent =
   `${days.toLocaleString()} days of quietly caring about you ✦`;
@@ -1554,8 +1557,11 @@ function showFinale(){
     spawnBurst(innerWidth/2, innerHeight * .75, 28);
   }, 300);
   setTimeout(() => { sign.style.opacity = '1'; }, 900);
-  // auto-launch Step 6 after letter is fully read
-  setTimeout(() => launchFinale(), 3200);
+  // show continue button after sign appears
+  setTimeout(() => {
+    document.getElementById('btnContinue').style.opacity = '1';
+    document.getElementById('btnContinue').style.pointerEvents = 'all';
+  }, 1600);
 }
 
 /* ── STEP 6 — FINALE ── */
